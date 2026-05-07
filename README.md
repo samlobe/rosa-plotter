@@ -18,24 +18,9 @@ This is the simplest if you are new to GitHub.
 4. Unzip the downloaded file.
 5. Open the unzipped folder in VSCode.
 
-This gives you the files, but it does not set up git syncing. If Sam sends an
-updated version later, download the ZIP again.
+This gives you the files, but it does not set up git syncing. If a version is updated later, you can download the ZIP again.
 
-### Option 2: Clone With GitHub Desktop
-
-This is better if you want updates from GitHub.
-
-1. Install GitHub Desktop: <https://desktop.github.com/>
-2. Open GitHub Desktop and sign in.
-3. On the GitHub repository page, click the green **Code** button.
-4. Click **Open with GitHub Desktop**.
-5. Choose where to save the folder.
-6. Click **Clone**.
-7. Open the cloned folder in VSCode.
-
-Later, use **Fetch origin** / **Pull origin** in GitHub Desktop to get updates.
-
-### Option 3: Clone From The Terminal
+### Option 2: Clone From The Terminal
 
 If git is already installed:
 
