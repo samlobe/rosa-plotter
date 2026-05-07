@@ -68,6 +68,15 @@ The package is meant to scan normal local data folders, not only the small
 example files in this repo. The examples are here so tests can confirm the
 parsers still understand the file formats.
 
+## Example Files
+
+Small example files live in `tests/fixtures/`. They are not the working data
+folder; they are just minimal files used by the tests to make sure the XRD,
+Raman, and TGA parsers still work.
+
+Keep real experiment data outside the repository and point `config/paths.json`
+at those local folders.
+
 ## Add A New Workflow
 
 1. Add a module in `rosa_plots/`, such as `new_analysis.py`.

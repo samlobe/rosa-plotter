@@ -8,11 +8,14 @@ import pytest
 from rosa_plots.common import PROJECT_ROOT, WorkflowError, load_json, save_json
 from rosa_plots.raman import load_raman_spectrum
 from rosa_plots.tga import parse_tga_header, read_text_lines, read_tga_file
-from rosa_plots.xrd import load_xrd_memory, load_xrd_samples
+from rosa_plots.xrd import load_xrd_samples
+
+
+FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
 
 
 def test_raman_loader_reads_two_numeric_columns():
-    df = load_raman_spectrum(PROJECT_ROOT / "C5R3-SF-2.txt")
+    df = load_raman_spectrum(FIXTURES / "C5R3-SF-2.txt")
 
     assert list(df.columns) == ["Wavenumber", "Intensity"]
     assert len(df) > 10
@@ -20,7 +23,7 @@ def test_raman_loader_reads_two_numeric_columns():
 
 
 def test_tga_loader_reads_sig_header_and_numeric_data():
-    path = PROJECT_ROOT / "C3R6_loose_fines.txt"
+    path = FIXTURES / "C3R6_loose_fines.txt"
     lines = read_text_lines(path)
     columns, start_idx = parse_tga_header(lines, path)
     df = read_tga_file(path)
@@ -36,7 +39,7 @@ def test_xrd_loader_reads_xls_when_xlrd_is_available():
     if importlib.util.find_spec("xlrd") is None:
         pytest.skip("xlrd is not installed in this environment")
 
-    samples = load_xrd_samples(PROJECT_ROOT)
+    samples = load_xrd_samples(FIXTURES)
 
     assert samples
     name, df = next(iter(samples.items()))
@@ -50,11 +53,11 @@ def test_xrd_loader_gives_clear_xlrd_message_when_missing():
         pytest.skip("xlrd is installed in this environment")
 
     with pytest.raises(WorkflowError, match="needs xlrd"):
-        load_xrd_samples(PROJECT_ROOT)
+        load_xrd_samples(FIXTURES)
 
 
 def test_xrd_memory_preserves_existing_memory_shape():
-    memory = load_xrd_memory()
+    memory = load_json(FIXTURES / "xrd_memory.json")
 
     assert "indices" in memory
     assert "samples" in memory
