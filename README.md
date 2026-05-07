@@ -1,8 +1,7 @@
 # Research Plotter
 
-This folder now has a small local plotting package next to the original
-`generating_plots.py`. The original file is intentionally left untouched as the
-archive/reference version.
+This folder contains a small local plotting package for prompt-driven research
+figure workflows.
 
 ## Get The Code
 
