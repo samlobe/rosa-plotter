@@ -79,3 +79,88 @@ parsers still understand the file formats.
 
 One-off group-meeting figures can start in `rosa_plots/manual_figures.py`. If
 one becomes reused, promote it to its own module.
+
+### Example: Add A Pressure + Temperature Plot
+
+Imagine Rosa keeps making the same group-meeting figure: inlet pressure and
+inside-reactor temperature on the same time axis. Once that figure becomes
+reused, it can become its own workflow.
+
+First, make a new file:
+
+```text
+rosa_plots/pressure_temperature.py
+```
+
+Inside that file, the main function should be named something obvious:
+
+```python
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+
+from rosa_plots.common import apply_plot_style, ask, prompt_for_path
+from rosa_plots.mass_spec import load_pressure_csv, load_temperature_csv
+
+
+def run_interactive_pressure_temperature():
+    pressure_path = prompt_for_path("pressure_file", "Pressure CSV file")
+    temp_path = prompt_for_path("temperature_file", "Temperature CSV file")
+
+    pressure_header_lines = int(ask("Pressure header lines", "10"))
+    temp_header_lines = int(ask("Temperature header lines", "0"))
+    t_mass_spec = float(ask("Mass-spec start offset, hours", "0"))
+    t_preheat = float(ask("Preheat offset, hours", "0"))
+
+    pressure = load_pressure_csv(
+        Path(pressure_path),
+        header_lines=pressure_header_lines,
+        t_mass_spec=t_mass_spec,
+        t_preheat=t_preheat,
+    )
+    temp = load_temperature_csv(
+        Path(temp_path),
+        header_lines=temp_header_lines,
+        t_mass_spec=t_mass_spec,
+        t_preheat=t_preheat,
+    )
+
+    inside_col = temp.attrs["inside_reactor_col"]
+
+    fig, ax1 = plt.subplots(figsize=(8, 5))
+    ax1.plot(pressure["inlet_h"], pressure["inlet_barg"], color="#1c96ea")
+    ax1.set_xlabel("Time (hours)")
+    ax1.set_ylabel("Inlet pressure (barg)")
+
+    ax2 = ax1.twinx()
+    ax2.plot(temp["t_h"], temp[inside_col], color="#f01212")
+    ax2.set_ylabel("Inside-reactor temperature (deg C)")
+
+    apply_plot_style(ax1)
+    apply_plot_style(ax2)
+    fig.tight_layout()
+    plt.show()
+```
+
+Then add it to `plotter.py`:
+
+```python
+from rosa_plots.pressure_temperature import run_interactive_pressure_temperature
+
+WORKFLOWS = {
+    "1": ("XRD", run_interactive_xrd),
+    "2": ("Raman", run_interactive_raman),
+    "3": ("TGA", run_interactive_tga),
+    "4": ("Mass Spec", run_interactive_mass_spec),
+    "5": ("Pressure/Temperature", run_interactive_pressure_temperature),
+}
+```
+
+That is all “add a module” means: make a new Python file for one reusable
+recipe, give it one function the menu can call, and add that function to the
+menu.
+
+The test can stay tiny. For example, with one small pressure CSV and one small
+temperature CSV in the repo, a test could check that both files load and produce
+the expected time columns. It does not need to inspect whether the plot looks
+perfect.
