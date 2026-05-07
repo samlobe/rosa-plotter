@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Friendly launcher for Rosa's plotting workflows."""
+"""Friendly launcher for research plotting workflows."""
 
 from rosa_plots.mass_spec import run_interactive_mass_spec
 from rosa_plots.raman import run_interactive_raman

@@ -1,4 +1,4 @@
-"""Small local plotting package for Rosa's research workflows."""
+"""Small local plotting package for research workflows."""
 
 __all__ = [
     "common",

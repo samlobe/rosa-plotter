@@ -1,4 +1,4 @@
-# Rosa Plotter
+# Research Plotter
 
 This folder now has a small local plotting package next to the original
 `generating_plots.py`. The original file is intentionally left untouched as the
@@ -43,8 +43,8 @@ Set local data folders:
 cp config/paths.example.json config/paths.json
 ```
 
-Then edit `config/paths.json` so the folders point at Rosa's local Box folders.
-This file is ignored by git because each computer can have different paths.
+Then edit `config/paths.json` so the folders point at the local data folders.
+This file is ignored by git because each computer can have different local paths.
 
 Then start the prompt menu:
 
@@ -65,8 +65,8 @@ is correct, the loaders scan all matching files in that folder:
 - Raman: `.txt`
 - TGA: `.txt` files in the TA Instruments `Sig...` / `StartOfData` format
 
-So yes, the package is meant to work on Rosa's dozens of local files, not just
-the small examples in this repo. The examples are here so tests can confirm the
+The package is meant to scan normal local data folders, not only the small
+example files in this repo. The examples are here so tests can confirm the
 parsers still understand the file formats.
 
 ## Add A New Workflow
@@ -75,14 +75,14 @@ parsers still understand the file formats.
 2. Put the interactive entrypoint in `run_interactive_new_analysis()`.
 3. Reuse helpers from `rosa_plots/common.py` for prompts, JSON memory, paths, and plot styling.
 4. Register it in `plotter.py`.
-5. Add one tiny fixture file and a pytest smoke test.
+5. Optional but helpful: add one tiny fixture file and a pytest smoke test.
 
 One-off group-meeting figures can start in `rosa_plots/manual_figures.py`. If
 one becomes reused, promote it to its own module.
 
 ### Example: Add A Pressure + Temperature Plot
 
-Imagine Rosa keeps making the same group-meeting figure: inlet pressure and
+Imagine the same group-meeting figure keeps coming up: inlet pressure and
 inside-reactor temperature on the same time axis. Once that figure becomes
 reused, it can become its own workflow.
 
@@ -160,7 +160,8 @@ That is all “add a module” means: make a new Python file for one reusable
 recipe, give it one function the menu can call, and add that function to the
 menu.
 
-The test can stay tiny. For example, with one small pressure CSV and one small
-temperature CSV in the repo, a test could check that both files load and produce
-the expected time columns. It does not need to inspect whether the plot looks
-perfect.
+Tests are optional for quick plots, but useful for workflows that parse a file
+format you do not want to accidentally break. A test can stay tiny: with one
+small pressure CSV and one small temperature CSV in the repo, it could check
+that both files load and produce the expected time columns. It does not need to
+inspect whether the plot looks perfect.

@@ -7,7 +7,7 @@ Instrument	SDT Q600 V20.9 Build 20
 Module	DSC-TGA Standard
 InstSerial	0600-0206
 Operator	RZ
-File	\\Desktop-9gccctk\ta\Data\SDT\Results\Rosadriana\25-7-18\C3R6 Loose fines.001
+File	\\instrument-computer\ta\Data\SDT\Results\example-run\C3R6 Loose fines.001
 Sample	
 Size	7.68800	mg
 ProcName	Ramp
@@ -20,11 +20,11 @@ Text
 Exotherm	Up
 Kcell	0.810000
 InstCalDate	Weight: 2025-05-30  Time: 08:22:23 TempRange 200.02 to 1400.06 °C
-InstCalFile	Weight: \\Uscpl-f2hg0g1\ta\Data\SDT\Q600\empty beam.001 \\Uscpl-f2hg0g1\ta\Data\SDT\Q600\weighted beam.001
+InstCalFile	Weight: \\calibration-server\ta\Data\SDT\Q600\empty beam.001 \\calibration-server\ta\Data\SDT\Q600\weighted beam.001
 InstCalDate	Heat Flow: 2025-05-30  Time: 12:02:03 TempRange 200.05 to 1483.09 °C
-InstCalFile	Heat Flow: \\Uscpl-f2hg0g1\ta\Data\SDT\Q600\heat flow empty pan.001 \\Uscpl-f2hg0g1\ta\Data\SDT\Q600\heat flow saphire.001
+InstCalFile	Heat Flow: \\calibration-server\ta\Data\SDT\Q600\heat flow empty pan.001 \\calibration-server\ta\Data\SDT\Q600\heat flow saphire.001
 InstCalDate	DTA Baseline: 2025-05-30  Time: 14:13:18 TempRange 50.00 to 1483.34 °C
-InstCalFile	DTA Baseline: \\Uscpl-f2hg0g1\ta\Data\SDT\Q600\empty beam.001
+InstCalFile	DTA Baseline: \\calibration-server\ta\Data\SDT\Q600\empty beam.001
 TempCal	1	pts	420.95	419.50
 Controls	Gas 1  Event OFF  Sampling 0.5 sec/pt
 AutoAnalysis	Off
@@ -41,7 +41,7 @@ Sig8	Deriv. Weight (%/°C)
 Date	2025-07-18
 Time	10:06:08
 OrgMethod	1: Ramp 10.00 °C/min to 1200.00 °C
-OrgFile	C:\TA\Data\SDT\Results\Rosadriana\25-7-18\C3R6 Loose fines.001
+OrgFile	C:\TA\Data\SDT\Results\example-run\C3R6 Loose fines.001
 StartOfData
 .002388889	16.47766	7.687792	-3.193135	0.07687382	0.5468894	19.98746	-0.2925918
 .004166667	16.47659	7.687740	-3.194084	0.07680406	0.5463956	19.99631	-0.2925976
@@ -14240,4 +14240,3 @@ StartOfData
 118.2792	1197.164	1.612490	-24.57238	2.767948	47.50883	20.01457	.003721734
 118.2875	1197.244	1.612443	-24.56965	2.768258	47.51480	19.99983	.003696632
 118.2958	1197.328	1.612451	-24.56731	2.768558	47.52062	19.97636	.003672788
-

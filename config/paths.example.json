@@ -1,7 +1,7 @@
 {
-  "experiment_data": "/path/to/Rosa/Experiment Data",
+  "experiment_data": "/path/to/Data/Experiment Data",
   "outputs": "outputs",
-  "raman_data": "/path/to/Rosa/Raman/For Plotting",
-  "tga_data": "/path/to/Rosa/TGA",
-  "xrd_data": "/path/to/Rosa/XRD/XRD_data"
+  "raman_data": "/path/to/Data/Raman/For Plotting",
+  "tga_data": "/path/to/Data/TGA",
+  "xrd_data": "/path/to/Data/XRD/XRD_data"
 }

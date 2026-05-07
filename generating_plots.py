@@ -4,7 +4,7 @@
 """
 Created on Wed Apr  9 20:40:55 2025
 
-@author: rosadrianazelaya
+@author: researcher
 """
 
 
@@ -24,7 +24,7 @@ mpl.rcParams.update({
 import json
 
 # === CONFIG ===
-data_folder = '/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/XRD/XRD_data'
+data_folder = '/path/to/XRD/XRD_data'
 nickname_file = 'sample_nicknames.csv'   # CSV with columns: sample_name,nickname
 
 # ---- Si calibration settings (Cu Kα1 references) ----
@@ -636,7 +636,7 @@ mpl.rcParams.update({
 })
 
 # === SETTINGS ===
-data_folder = '/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Raman/For Plotting'
+data_folder = '/path/to/Raman/For Plotting'
 cutoff_wavenumber = 1100  # cm⁻¹
 settings_file = os.path.join(data_folder, 'plot_settings.json')
 
@@ -972,7 +972,7 @@ mpl.rcParams.update({
 # ------------------------------------------------------------------
 # 1)  EDIT ME: file location
 # ------------------------------------------------------------------
-FILEPATH = Path(r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Experiment Data/Calibration-data/9-12-25-cal-ms.txt")
+FILEPATH = Path(r"/path/to/Experiment Data/Calibration-data/9-12-25-cal-ms.txt")
 
 # ------------------------------------------------------------------
 # 2)  EDIT ME: list of (start_h, end_h) tuples
@@ -1085,12 +1085,12 @@ from scipy.optimize import curve_fit
 # ------------------------------------------------------------------
 # 1)  EDIT THESE LINES ONLY ↴
 # ------------------------------------------------------------------
-#FILEPATH = Path(r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halogens/Experiment Data/5-20-25-C2R3-PreCarb-3/ms-calibration.txt")
-#Folder_path = r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halogens/Experiment Data/8-5-25-C3R11-Fe-Syn-Beads-3/"
-# Folder_path = r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Experiment Data/9-29-25-C3R20-Fe-Chips-MCS-4/"
-# Folder_path = r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Experiment Data/7-1-25-C3R4-Fe-Chips-2/"
-Folder_path = r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Experiment Data/11-4-2-C4R1/"
-# Folder_path = r"/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/Experiment Data/8-20-25 Ar cooking/"
+#FILEPATH = Path(r"/path/to/Halogens/Experiment Data/5-20-25-C2R3-PreCarb-3/ms-calibration.txt")
+#Folder_path = r"/path/to/Halogens/Experiment Data/8-5-25-C3R11-Fe-Syn-Beads-3/"
+# Folder_path = r"/path/to/Experiment Data/9-29-25-C3R20-Fe-Chips-MCS-4/"
+# Folder_path = r"/path/to/Experiment Data/7-1-25-C3R4-Fe-Chips-2/"
+Folder_path = r"/path/to/Experiment Data/11-4-2-C4R1/"
+# Folder_path = r"/path/to/Experiment Data/8-20-25 Ar cooking/"
 
 FILEPATH = Path(Folder_path + r"C4R1-ms.txt")
 t_heat_up = 0 #hours 
@@ -1518,7 +1518,7 @@ except ImportError:
 
 # ───────────────────────── Configuration ───────────────────────────────────── #
 
-MAIN_DIR = Path("/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/TGA")
+MAIN_DIR = Path("/path/to/TGA")
 CACHE_FILE = MAIN_DIR / ".tga_cache.json"
 COLORS = ['#000000', '#7E1FD1','#26C2FF',  '#E16462', '#FFB000','#6F728C', '#00A86A' ]
 
@@ -1804,7 +1804,7 @@ except ImportError:
 
 # ───────────────────────── Configuration ───────────────────────────────────── #
 
-MAIN_DIR = Path("/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halomaterials/Rosa/TGA")
+MAIN_DIR = Path("/path/to/TGA")
 CACHE_FILE = MAIN_DIR / ".tga_cache.json"
 COLORS = ['#000000', '#7E1FD1','#26C2FF',  '#E16462', '#FFB000','#6F728C', '#00A86A' ]
 transparencies = [1,1,1,1,1,1,1]
@@ -2325,7 +2325,7 @@ plt.rcParams.update({
 })
 
 # Load Excel again
-raw = pd.read_excel("/Users/rosadrianazelaya/Documents/Erics Lab/Rosa Data 8-18.xlsx", sheet_name="Sheet1")
+raw = pd.read_excel("/path/to/comparison_data.xlsx", sheet_name="Sheet1")
 
 # ---- Parse averages block (rows 2,3,4) ----
 avg = raw.loc[[2,3,4]].copy()
@@ -2521,7 +2521,7 @@ except ImportError:
     _HAVE_SCIPY = False
 
 # ───────── Configuration ───────── #
-MAIN_DIR = Path("/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halogens/TGA")
+MAIN_DIR = Path("/path/to/Halogens/TGA")
 CACHE_FILE = MAIN_DIR / ".tga_cache.json"
 COLORS = ['#b300ff', '#2ea7e4', '#ff0000', '#ff7f95', '#007200', '#7848ff']
 
@@ -2663,7 +2663,7 @@ plt.show()
 
 #%% Pressure plots (inlet & outlet)
 # ----------------------------------------------------------
-csv_path      = r'/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halogens/Experiment Data/6-3-25-C2R5-PreCarb-2/pressure-attempt-1.csv'
+csv_path      = r'/path/to/Halogens/Experiment Data/6-3-25-C2R5-PreCarb-2/pressure-attempt-1.csv'
 t_mass_spec   = 0#- 31/60   # h before RGA logging
 t_preheat     = 14/60 + 18/3600             # h between RGA start & heat-up
 header_lines  = 11
@@ -2739,7 +2739,7 @@ plt.show()
 
 #%% Pico-log temperatures
 # ----------------------------------------------------------
-csv_path      = r'/Users/rosadrianazelaya/Library/CloudStorage/Box-Box/Halogens/Experiment Data/6-3-25-C2R5-PreCarb-2/temp-attempt-1.csv'
+csv_path      = r'/path/to/Halogens/Experiment Data/6-3-25-C2R5-PreCarb-2/temp-attempt-1.csv'
 t_mass_spec   = 0
 t_preheat     = 0.08
 header_lines  = 0
