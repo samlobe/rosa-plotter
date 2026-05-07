@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Local run outputs and remembered workflow choices.
+outputs/
+.xrd_memory.json
+.raman_memory.json
+.tga_cache.json
+
+# Machine-specific paths. Copy config/paths.example.json to config/paths.json.
+config/paths.json

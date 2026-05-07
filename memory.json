@@ -1,0 +1,56 @@
+{
+  "indices": [
+    52,
+    55,
+    56
+  ],
+  "sample_names": [
+    "C5R3-SF",
+    "C5R4-SF",
+    "C5R5-SF-1hr"
+  ],
+  "plot_title": "XRD",
+  "include_shift_on_legend": false,
+  "samples": {
+    "C5R4-SF": {
+      "nickname": "C5R4-SF",
+      "offset": 1.0,
+      "has_si": true
+    },
+    "C3R11 FV beads rpt": {
+      "nickname": "C3R11 FV beads rpt",
+      "offset": 1.0,
+      "has_si": false
+    },
+    "C3R13 FV chips rpt": {
+      "nickname": "C3R13 FV chips rpt",
+      "offset": 2.0,
+      "has_si": false
+    },
+    "C3R6 GM Fines w Si": {
+      "nickname": "C3R6 GM Fines w Si",
+      "offset": 0.0,
+      "has_si": true
+    },
+    "CM1": {
+      "nickname": "CM1",
+      "offset": 0.0,
+      "has_si": true
+    },
+    "Graphite control w Si": {
+      "nickname": "Graphite",
+      "offset": 1.0,
+      "has_si": true
+    },
+    "C5R3-SF": {
+      "nickname": "C5R3-SF",
+      "offset": 0.0,
+      "has_si": true
+    },
+    "C5R5-SF-1hr": {
+      "nickname": "C5R5-SF-1hr",
+      "offset": 2.0,
+      "has_si": true
+    }
+  }
+}
