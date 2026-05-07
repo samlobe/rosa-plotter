@@ -4,6 +4,46 @@ This folder now has a small local plotting package next to the original
 `generating_plots.py`. The original file is intentionally left untouched as the
 archive/reference version.
 
+## Get The Code
+
+There are two easy ways to get this project from GitHub.
+
+### Option 1: Download ZIP
+
+This is the simplest if you are new to GitHub.
+
+1. Open the GitHub repository page in your browser.
+2. Click the green **Code** button.
+3. Click **Download ZIP**.
+4. Unzip the downloaded file.
+5. Open the unzipped folder in VSCode.
+
+This gives you the files, but it does not set up git syncing. If Sam sends an
+updated version later, download the ZIP again.
+
+### Option 2: Clone With GitHub Desktop
+
+This is better if you want updates from GitHub.
+
+1. Install GitHub Desktop: <https://desktop.github.com/>
+2. Open GitHub Desktop and sign in.
+3. On the GitHub repository page, click the green **Code** button.
+4. Click **Open with GitHub Desktop**.
+5. Choose where to save the folder.
+6. Click **Clone**.
+7. Open the cloned folder in VSCode.
+
+Later, use **Fetch origin** / **Pull origin** in GitHub Desktop to get updates.
+
+### Option 3: Clone From The Terminal
+
+If git is already installed:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+```
+
 ## Run
 
 Install dependencies once:
